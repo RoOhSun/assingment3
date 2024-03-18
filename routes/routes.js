@@ -1,8 +1,8 @@
 /*
- * Filename: routes.js
- * Student's Name: Meet Patel
- * Student ID: 200555977
- * Date: 12 Oct 2023
+Group Assignment 3
+Filename:routes.js
+Student name: Yogesh Neupane (200570557) and Roshan Khatri (200575702)
+Date: 2024/03/17
  */
 
 require("dotenv").config();

@@ -1,10 +1,8 @@
 /*
- * Filename: auth.js
- * Sanket Parab - 2200555449 
- * Saumya Maurya - 200553573
- * Ruchit Suhagia – 200554055
- * Tanveer Singh - 200554065
- * Date: 12 Oct 2023
+Group Assignment 3
+Filename:auth.js
+Student name: Yogesh Neupane (200570557) and Roshan Khatri (200575702)
+Date: 2024/03/17
  */
 
 const jwt = require("jsonwebtoken");
