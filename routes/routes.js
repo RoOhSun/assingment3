@@ -19,33 +19,18 @@ const bookController = require('../controller/controllers');
 
 //register
 app.post("/register",async(req,res)=>{
-    /*
-        1. get user info
-        2. validate user info
-        3. validate id wheather the user already exists
-        4. Encrypt the user password
-        5. Creatte a user in mongoose
-        6. Create a signed jwt token
-    */
 
     try{
-        //1
         const{firstname,lastname,email,password} = req.body;
-
-        //2
         if(!(email && password && lastname && firstname)){
             res.status(400).json({error : "All fields are required"})
         }
-
-        //3
         const CheckUser = await User.findOne({email});
         if(CheckUser){
             return res.json({user : "user is already registered"})
         }
-        //4
         encryptedPassword = await bcrypt.hash(password, 12)
 
-        //5
         const user = await User.create({
             firstname,
             lastname,
@@ -53,7 +38,6 @@ app.post("/register",async(req,res)=>{
             password: encryptedPassword
         })
 
-        //6
         const token = jwt.sign({
             user_id:user._id,email},
             process.env.TOKEN_KEY,
@@ -75,14 +59,7 @@ app.post("/register",async(req,res)=>{
 
 //login
 app.post("/login", async(req,res)=>{
-     /*
-        1. get user info
-        2. validate user info
-        3. validate id wheather the user already exists
-        4. validate the user password with the password in database
-        6. Create a signed jwt token
-    */
-
+    
     try{
         const{email,password} = req.body;
         if(!(email && password)){
@@ -115,13 +92,11 @@ app.post("/login", async(req,res)=>{
 
 })
 
-
-//welcome
 app.post("/welcome", auth, (req,res)=>{
     res.send("successfully completed Jwt Authentication welcome to home")
 })
 
-// get all the books detail
+// get books detail
 app.get('/book', auth, bookController.getAllBooks);
 
 // get particular book detail 
@@ -130,7 +105,7 @@ app.get('/book/:id', auth, bookController.getBookById);
 // Add new book 
 app.post('/book', auth, bookController.addNewBook);
 
-// update the existing book detail
+// update the old book detail
 app.put('/book/:id', auth, bookController.updateBook);
 
 // delete an existing book

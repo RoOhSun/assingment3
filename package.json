@@ -1,5 +1,5 @@
 {
-  "name": "assignment4",
+  "name": "assignment3",
   "version": "1.0.0",
   "description": "using jwt authentication and performing CURD for book",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "author": "Sanket Parab, Saumya Maurya, Ruchit Suhagia, Tanveer Sing",
+  "author": "Roshan Khatri, Yogesh Neupane",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",

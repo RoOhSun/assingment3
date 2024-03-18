@@ -9,13 +9,13 @@ const Book = require('../models/bookmodels');
 
 /**
  * Get all the books.
- * @returns display all the books in table format
+ * @returns
  */
 exports.getAllBooks = async (req, res) => {
   try {
     const books = await Book.find();
     
-    //display the result into tabular format
+    //display books into tabular format
     res.json(books)
 
   } catch (error) {
@@ -25,8 +25,8 @@ exports.getAllBooks = async (req, res) => {
 
 /**
  * Get a book details by its ID.
- * @param {string} req.params.id - Book ID
- * @returns Book detail with the specified ID
+ * @param {string} req.params.id 
+ * @returns 
  */
 exports.getBookById = async (req, res) => {
   const { id } = req.params;
@@ -41,8 +41,8 @@ exports.getBookById = async (req, res) => {
 
 /**
  * Add a new book.
- * @param {Object} req.body - The data of the new book
- * @returns The newly created book
+ * @param {Object} req.body 
+ * @returns 
  */
 exports.addNewBook = async (req, res) => {
   const bookData = req.body;
@@ -55,10 +55,10 @@ exports.addNewBook = async (req, res) => {
 };
 
 /**
- * Update an details of existing book.
- * @param {string} req.params.id - Book ID
- * @param {Object} req.body - updated book data
- * @returns The updated book
+
+  @param {string} req.params.id 
+  @param {Object} req.body 
+  @returns 
  */
 exports.updateBook = async (req, res) => {
   const { id } = req.params;
@@ -73,8 +73,8 @@ exports.updateBook = async (req, res) => {
 
 /**
  * Delete an existing book.
- * @param {string} req.params.id - book ID
- * @returns Success message after on deletion
+ * @param {string} req.params.id
+ * @returns 
  */
 exports.deleteBook = async (req, res) => {
   const { id } = req.params;
