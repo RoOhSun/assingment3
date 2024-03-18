@@ -14,7 +14,6 @@ const Book = require('../models/bookmodels');
 exports.getAllBooks = async (req, res) => {
   try {
     const books = await Book.find();
-    
     //display books into tabular format
     res.json(books)
 

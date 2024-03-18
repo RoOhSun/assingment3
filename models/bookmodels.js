@@ -24,11 +24,11 @@ const BookSchema = new Schema({
     required: true, 
 },
   Author: { 
-    type: String, 
+    type: [String], 
     required: true, 
 },
   Genre: { 
-    type: String, 
+    type: [String], 
     required: true, 
 },
 created_date:{
