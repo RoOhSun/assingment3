@@ -22,7 +22,10 @@ app.post("/register",async(req,res)=>{
 
     try{
         const{firstname,lastname,email,password} = req.body;
-        if(!(email && password && lastname && firstname)){
+        console.log('====================================');
+        console.log(req.body);
+        console.log('====================================');
+        if(!(email.length > 0 && password.length > 0 && lastname.length > 0 && firstname.length > 0)){
             res.status(400).json({error : "All fields are required"})
         }
         const CheckUser = await User.findOne({email});
