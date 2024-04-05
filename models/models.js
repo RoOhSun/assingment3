@@ -1,5 +1,5 @@
 /*
-Group Assignment 3
+Group Assignment 4
 Filename:model.js
 Student name: Yogesh Neupane (200570557) and Roshan Khatri (200575702)
 Date: 2024/03/17

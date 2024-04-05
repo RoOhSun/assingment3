@@ -1,5 +1,5 @@
 /*
-Group Assignment 3
+Group Assignment 4
 Filename:bookmodels.js
 Student name: Yogesh Neupane (200570557) and Roshan Khatri (200575702)
 Date: 2024/03/17
@@ -15,8 +15,7 @@ const BookSchema = new Schema({
     required: true, 
 },
   ISBN: { 
-    type: String, 
-    unique: true,
+    type: String,
     required: true,  
 },
   Rating: { 
@@ -24,11 +23,11 @@ const BookSchema = new Schema({
     required: true, 
 },
   Author: { 
-    type: [String], 
+    type: String, 
     required: true, 
 },
   Genre: { 
-    type: [String], 
+    type: String, 
     required: true, 
 },
 created_date:{
@@ -37,4 +36,4 @@ created_date:{
 }
 }, { bufferCommands: false });
 
-module.exports = mongoose.model('book', BookSchema);
+module.exports = mongoose.model('booklist', BookSchema);
